@@ -1,0 +1,16 @@
+# A Golang Docker Environment for local development
+version: '3'
+services:
+  golang:
+    container_name: go
+    image: golang
+    volumes:
+      - ./practice:/development
+    entrypoint: 
+      - tail
+      - -f
+      - /dev/null
+    networks:
+      - local
+networks:
+  local:
